@@ -5,18 +5,18 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity"
+        tools:context=".ui.MainActivity"
         android:orientation="vertical">
 
     <mozilla.components.browser.toolbar.BrowserToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"/>
-    <org.mozilla.geckoview.GeckoView
-            android:id="@+id/geckoview"
+            android:layout_height="56dp"
+            android:background="#aaaaaa" />
+    <mozilla.components.concept.engine.EngineView
+            android:id="@+id/conceptEngineView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9"/>
+            android:layout_weight="1" />
 
 </LinearLayout>
