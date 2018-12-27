@@ -49,6 +49,11 @@ dependencies {
     implementation "org.mozilla.components:feature-toolbar:$mozillaComponentVersion"
     implementation "org.mozilla.components:feature-session:$mozillaComponentVersion"
 
+    implementation "org.mozilla.components:browser-menu:$mozillaComponentVersion"
+    implementation "org.mozilla.components:ui-icons:$mozillaComponentVersion"
+    implementation "org.mozilla.components:ui-colors:$mozillaComponentVersion"
+
+
     //GeckoView Implementations
 //    x86Implementation     "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86:${geckoviewVersion}"
 //    x86_64Implementation  "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86_64:${geckoviewVersion}"

@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.View
 import io.navendra.foggy.App
 import io.navendra.foggy.R
+import io.navendra.foggy.browser.BrowserMenu
 import kotlinx.android.synthetic.main.activity_main.*
 import mozilla.components.browser.session.Session
 import mozilla.components.browser.session.SessionManager
@@ -47,6 +48,8 @@ class MainActivity : AppCompatActivity() {
             sessionUseCases.loadUrl
         )
 
+        toolbar.setMenuBuilder(BrowserMenu(sessionUseCases).builder)
+
         //Adding a default session
         sessionManager.add(Session("https://www.mozilla.org"))
     }
@@ -67,6 +70,13 @@ class MainActivity : AppCompatActivity() {
             EngineView::class.java.name-> engine.createView(context!!,attrs!!).asView()
             else -> super.onCreateView(name, context, attrs)
     }
+
+
+
+    //
+
+
+
 
 
 
