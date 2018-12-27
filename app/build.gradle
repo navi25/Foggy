@@ -46,6 +46,8 @@ dependencies {
     implementation "org.mozilla.components:browser-toolbar:$mozillaComponentVersion"
     implementation "org.mozilla.components:concept-engine:$mozillaComponentVersion"
     implementation "org.mozilla.components:browser-engine-gecko:$mozillaComponentVersion"
+    implementation "org.mozilla.components:feature-toolbar:$mozillaComponentVersion"
+    implementation "org.mozilla.components:feature-session:$mozillaComponentVersion"
 
     //GeckoView Implementations
 //    x86Implementation     "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86:${geckoviewVersion}"
