@@ -1,0 +1,86 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    flavorDimensions "abi"
+
+    productFlavors {
+        x86     { dimension "abi" }
+        x86_64  { dimension "abi" }
+        arm     { dimension "abi" }
+        aarch64 { dimension "abi" }
+    }
+
+    // Temporary fix until alpha10
+    packagingOptions {
+        exclude 'META-INF/proguard/androidx-annotations.pro'
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    //Mozilla Android Components
+    implementation "org.mozilla.components:browser-toolbar:$mozillaComponentVersion"
+    implementation "org.mozilla.components:concept-engine:$mozillaComponentVersion"
+    implementation "org.mozilla.components:browser-engine-gecko:$mozillaComponentVersion"
+    implementation "org.mozilla.components:feature-toolbar:$mozillaComponentVersion"
+    implementation "org.mozilla.components:feature-session:$mozillaComponentVersion"
+
+    implementation "org.mozilla.components:browser-menu:$mozillaComponentVersion"
+    implementation "org.mozilla.components:ui-icons:$mozillaComponentVersion"
+    implementation "org.mozilla.components:ui-colors:$mozillaComponentVersion"
+
+
+    //GeckoView Implementations
+//    x86Implementation     "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86:${geckoviewVersion}"
+//    x86_64Implementation  "org.mozilla.geckoview:geckoview-${geckoviewChannel}-x86_64:${geckoviewVersion}"
+//    armImplementation     "org.mozilla.geckoview:geckoview-${geckoviewChannel}-armeabi-v7a:${geckoviewVersion}"
+//    aarch64Implementation "org.mozilla.geckoview:geckoview-${geckoviewChannel}-arm64-v8a:${geckoviewVersion}"
+
+    implementation "org.mozilla.geckoview:geckoview-x86:64.0.20181204213330"
+
+
+    //Lifecycle
+    implementation "androidx.lifecycle:lifecycle-runtime:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version" // use kapt for Kotlin
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}

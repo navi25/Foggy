@@ -1,6 +1,6 @@
-package io.navendra.foggy.browser
+package io.navendra.browser.core
 
-import io.navendra.foggy.R
+import io.navendra.browser.R
 import mozilla.components.browser.menu.item.BrowserMenuItemToolbar
 import mozilla.components.feature.session.SessionUseCases
 

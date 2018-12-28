@@ -1,4 +1,4 @@
-package io.navendra.foggy.browser
+package io.navendra.browser.core
 
 import mozilla.components.browser.menu.BrowserMenuBuilder
 import mozilla.components.feature.session.SessionUseCases
