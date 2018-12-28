@@ -17,7 +17,7 @@ import mozilla.components.feature.toolbar.ToolbarFeature
 class BrowserManager(context: Context, lifecycle: Lifecycle, browserView: SimpleBrowserView){
 
 
-    private val observer: BrowserLifecycleListener = BrowserLifecycleListener()
+    private val observer: BrowserLifecycleObserver = BrowserLifecycleObserver()
     private val engine: Engine by lazy { BrowserWebEngine(context).gecko  }
 
     private val toolbarFeature: ToolbarFeature
@@ -52,7 +52,7 @@ class BrowserManager(context: Context, lifecycle: Lifecycle, browserView: Simple
     }
 
 
-    inner class BrowserLifecycleListener : LifecycleObserver {
+    inner class BrowserLifecycleObserver : LifecycleObserver {
 
         @OnLifecycleEvent(Lifecycle.Event.ON_START)
         fun handleOnStart() {
